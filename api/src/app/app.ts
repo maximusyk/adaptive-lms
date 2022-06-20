@@ -40,7 +40,7 @@ app.use('/api/units', unitRoutes);
 app.use('/api/keywords', keywordRoutes);
 app.use('/api/quizzes', quizRoutes);
 
-app.use('/display', (req, res) => {
+app.use('/api/display', (req, res) => {
     displayRoutes(app);
 
     res.status(200);

@@ -1,0 +1,39 @@
+.ant-menu-title-content {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.ant-menu-item a::before {
+  visibility: hidden !important;
+}
+
+.ant-collapse-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+
+  &:hover {
+    font-weight: bold !important;
+
+    & svg {
+      stroke-width: 5% !important;
+      transform: translateX(.3rem);
+    }
+  }
+}
+
+.ant-collapse-content-active {
+  border-bottom-right-radius: 0.75rem !important;
+  border-bottom-left-radius: 0.75rem !important;
+}
+
+.ant-collapse-content-box {
+  padding: .5rem .6rem !important;
+}
+
+main .main-content table td {
+  border: 1px solid #000;
+}

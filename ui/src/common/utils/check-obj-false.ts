@@ -1,0 +1,1 @@
+export const checkIsObjFalse = (obj: object) => Object.keys(obj).every((k) => !obj[k as keyof object]);

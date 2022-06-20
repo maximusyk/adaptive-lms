@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": false,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "paths": {
+            "@utils/*": ["./src/common/utils/*"],
+            "@general-types/*": ["./src/common/types/*"],
+            "@store/*": ["./src/store/*"],
+            "@features/*": ["./src/common/features/*"],
+            "@services/*": ["./src/common/services/*"],
+            "@hooks/*": ["./src/common/hooks/*"],
+            "@assets/*": ["./src/common/assets/*"],
+            "@pages/*": ["./src/pages/*"],
+            "@componentsLayout/*": ["./src/components/layout/*"],
+            "@componentsUI/*": ["./src/components/ui/*"]
+        },
+        "types": ["vite-plugin-pwa/client", "vite/client"]
+    },
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": [
+        "tailwind.config.js",
+        "postcss.config.js",
+        "dev-dist",
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.d.ts"
+    ]
+}

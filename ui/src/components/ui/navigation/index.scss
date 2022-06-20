@@ -1,0 +1,7 @@
+.ant-menu-item a:hover {
+    color: #fff !important
+}
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: unset !important;
+}

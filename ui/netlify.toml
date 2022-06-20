@@ -1,0 +1,7 @@
+[build.environment]
+NPM_FLAGS = "--prefix=/"
+LMS_API_URL = "https://adaptive-lms-api.herokuapp.com/api"
+NODE_OPTIONS = "--max-old-space-size=4096"
+[build]
+publish = "public"
+command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"

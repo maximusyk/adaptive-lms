@@ -1,0 +1,19 @@
+.notifications {
+  background-color: #f5f8f7 ;
+  border-radius: 12px ;
+  font-size: 1.4rem ;
+  line-height: 2.2rem ;
+  aspect-ratio: 1/1 ;
+  font-weight: bold;
+  width: 2.2rem ;
+  text-align: center;
+  margin-right: 20px ;
+  color: #7d7c7c ;
+  & sup {
+    min-width: 4px ;
+    width: 5px ;
+    height: 5px ;
+    top: 11px;
+    right: 12px;
+  }
+}

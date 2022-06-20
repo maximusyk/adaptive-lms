@@ -1,0 +1,33 @@
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  //background-color: #dbdbdb;
+  color: #141615;
+  border-radius: 13px;
+  padding: 5px 10px;
+  transition: all 3s;
+
+  & a {
+    padding-left: 10px;
+  }
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #f7d776;
+  border-radius: 50%;
+  display: flex;
+  justify-content: middle;
+  align-items: center;
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.chakra-avatar__initials {
+  color: #fff;
+  //mix-blend-mode: difference !important;
+}

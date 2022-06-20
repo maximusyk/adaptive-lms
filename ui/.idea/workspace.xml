@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="320eeb3a-4581-435e-a920-4315e89b6f82" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="28NLI8MNV5uAVSTTO17izplLOqf" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maximusyk/Personal/ui-adaptive_lms&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/maximusyk/Personal/ui-adaptive_lms/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="320eeb3a-4581-435e-a920-4315e89b6f82" name="Changes" comment="" />
+      <created>1651052014349</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651052014349</updated>
+      <workItem from="1651052015592" duration="13000" />
+      <workItem from="1651080297124" duration="1761000" />
+      <workItem from="1651143190968" duration="12856000" />
+      <workItem from="1651220794751" duration="24000" />
+      <workItem from="1651220825524" duration="2000" />
+      <workItem from="1651220845519" duration="51000" />
+      <workItem from="1651220925908" duration="5000" />
+      <workItem from="1651220961640" duration="2000" />
+      <workItem from="1651221266763" duration="365000" />
+      <workItem from="1651221891149" duration="23000" />
+      <workItem from="1651222662583" duration="2000" />
+      <workItem from="1651222803332" duration="4000" />
+      <workItem from="1651223495766" duration="1797000" />
+      <workItem from="1651240659401" duration="6212000" />
+      <workItem from="1652567545586" duration="174000" />
+      <workItem from="1652567733122" duration="57000" />
+      <workItem from="1652567831040" duration="79000" />
+      <workItem from="1652568108800" duration="547000" />
+      <workItem from="1652568700854" duration="894000" />
+      <workItem from="1654358133398" duration="1629000" />
+      <workItem from="1654361923823" duration="11000" />
+      <workItem from="1654362160743" duration="8000" />
+      <workItem from="1654362177475" duration="3000" />
+      <workItem from="1654362198519" duration="123000" />
+      <workItem from="1654362382479" duration="18000" />
+      <workItem from="1654362407653" duration="12000" />
+      <workItem from="1654362734760" duration="230000" />
+      <workItem from="1654363067319" duration="1395000" />
+      <workItem from="1654371127938" duration="37000" />
+      <workItem from="1654375389855" duration="4000" />
+      <workItem from="1654375654870" duration="139000" />
+      <workItem from="1654375818729" duration="4000" />
+      <workItem from="1654375833753" duration="85000" />
+      <workItem from="1654375923114" duration="5000" />
+      <workItem from="1654375971318" duration="3000" />
+      <workItem from="1654376066554" duration="139000" />
+      <workItem from="1654376242413" duration="5946000" />
+      <workItem from="1654466149445" duration="1825000" />
+      <workItem from="1654509785365" duration="987000" />
+      <workItem from="1654512832957" duration="9593000" />
+      <workItem from="1654590549096" duration="3242000" />
+      <workItem from="1654694162302" duration="1000" />
+      <workItem from="1655159370749" duration="133000" />
+      <workItem from="1655192455106" duration="22745000" />
+      <workItem from="1655280190676" duration="5398000" />
+      <workItem from="1655380460824" duration="5660000" />
+      <workItem from="1655409901386" duration="1168000" />
+      <workItem from="1655506371540" duration="597000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

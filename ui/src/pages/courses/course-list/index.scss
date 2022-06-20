@@ -1,0 +1,48 @@
+.card-title {
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.card-title {
+  font-size: .9rem;
+}
+.card {
+  min-width: 0 ;
+  display: flex ;
+  flex-direction: column ;
+  word-wrap: break-word ;
+  border-radius: .45rem ;
+}
+.card-body {
+  justify-content: space-between ;
+
+  & .course-users {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .instructor {
+    & span.instructor-name {
+      z-index: 0;
+      opacity: 0;
+      transform: translateX(-100px);
+      width: max-content;
+    }
+    & .instructor-avatar {
+      z-index: 1;
+      &:hover {
+        & ~ span.instructor-name {
+          opacity: 1;
+          transform: translateX(5px);
+
+          transition: transform 0.3s, opacity 0.7s;
+        }
+      }
+    }
+  }
+}
+.card-header {
+  border: none ;
+}

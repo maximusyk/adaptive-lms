@@ -1,0 +1,137 @@
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+.sidebar.ant-layout-sider {
+  min-width: none ;
+  max-width: none ;
+  height: 100vh;
+  box-shadow: 1px 0 6px -2px #ccc;
+  background: #fcfcfc;
+  // border-right: 1px solid rgb(222, 222, 222);
+  padding: 20px;
+
+  & .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &:hover ~ span.trigger {
+    opacity: 1;
+  }
+
+  &.ant-layout-sider-collapsed .app-icon {
+    filter: none;
+    fill: #6b4bc6;
+  }
+}
+
+.collapse-trigger .trigger {
+  opacity: .4;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.app-logo {
+  font-size: 2rem;
+  color: #633dcd;
+  font-weight: bold;
+  & .app-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    filter: drop-shadow(0px 0px 3px #4400ff);
+    fill: #f5f5f5;
+  }
+}
+
+button.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  height: auto;
+  & .circle {
+    @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #633dcd;
+    border-radius: 1.625rem;
+    .icon {
+      @include transition(all, 0.55s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: #f5f5f5;
+      &.arrow {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+        &::before {
+          position: absolute;
+          content: '';
+          top: -0.25rem;
+          right: 0.0625rem;
+          width: 0.625rem;
+          height: 0.625rem;
+          border-top: 0.125rem solid #f5f5f5;
+          border-right: 0.125rem solid #f5f5f5;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+  & .button-text {
+    @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &:not(.collapsed):hover {
+    & .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+    & .button-text {
+      color: #f5f5f5;
+    }
+  }
+  &.collapsed:hover {
+    & .icon {
+      transform: translateX(.4rem);
+    }
+    & .arrow::before {
+      top: -0.35rem;
+      width: 0.725rem;
+      height: 0.725rem;
+    }
+  }
+}

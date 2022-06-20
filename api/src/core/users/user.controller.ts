@@ -39,6 +39,8 @@ class UserController {
                 userData: { _id: req.params.id },
             });
 
+            console.log(result);
+
             return res.status(result.status).json(result.body);
         } catch ( error ) {
             next(error);

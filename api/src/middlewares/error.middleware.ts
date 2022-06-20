@@ -9,7 +9,7 @@ export const errorMiddleware = (
     const status = error instanceof ApiError ? error.status : 500;
     const message = error.message || 'Internal server error';
 
-    if ( req instanceof Response ) {
+    if ( 'status' in req ) {
         const response = req as Response;
         return response.status(status).json({
             status,

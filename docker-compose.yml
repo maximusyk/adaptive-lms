@@ -17,17 +17,6 @@ services:
     command: pnpm run start
     restart: unless-stopped
     env_file: ./api/.env
-    depends_on:
-      - api_db
-    networks:
-      - adaptive-lms-net
-
-  api_db:
-    image: mongo:latest
-    container_name: adaptive-lms-api-db
-    restart: unless-stopped
-    volumes:
-      - mongodb_api:/data/db
     networks:
       - adaptive-lms-net
 

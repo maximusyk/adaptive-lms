@@ -12,7 +12,7 @@ export const quizAPI = createApi({
     endpoints: (build) => ({
         createQuiz: build.mutation<IQuiz, FormData>({
             query: (quiz) => ({
-                url: '/quizzes',
+                url: '/api/quizzes',
                 method: 'POST',
                 body: quiz,
             }),
@@ -106,7 +106,7 @@ export const quizAPI = createApi({
         }),
         getAllQuizs: build.query<IQuiz[], void>({
             query: () => ({
-                url: '/quizzes',
+                url: '/api/quizzes',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));

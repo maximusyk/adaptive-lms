@@ -26,7 +26,7 @@ export const userAPI = createApi({
         }),
         createUser: build.mutation<IUser, IUser>({
             query: (user) => ({
-                url: '/users',
+                url: '/api/users',
                 method: 'POST',
                 body: user,
             }),
@@ -60,7 +60,7 @@ export const userAPI = createApi({
         }),
         getAllUsers: build.query<IUser[], void>({
             query: () => ({
-                url: '/users',
+                url: '/api/users',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));

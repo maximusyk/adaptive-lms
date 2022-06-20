@@ -19,7 +19,7 @@ export const courseAPI = createApi({
     endpoints: (build) => ({
         createCourse: build.mutation<ICourse, ICourse>({
             query: (course) => ({
-                url: '/courses',
+                url: '/api/courses',
                 method: 'POST',
                 body: course,
             }),
@@ -55,7 +55,7 @@ export const courseAPI = createApi({
         }),
         getAllCourses: build.query<ICourse[], void>({
             query: () => ({
-                url: '/courses',
+                url: '/api/courses',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));

@@ -1,8 +1,5 @@
 import { setLoaderState } from '@features/loader-state.feature';
-import {
-    appendSubdivisionToList,
-    updateActualSubdivision,
-} from '@features/subdivisions.feature';
+import { appendSubdivisionToList, updateActualSubdivision } from '@features/subdivisions.feature';
 import { createApi } from '@reduxjs/toolkit/dist/query/react';
 import { baseQueryWithReauth } from '@store/base-query.store';
 import { ILecture } from '../types/lecture.type';
@@ -10,11 +7,11 @@ import { ILecture } from '../types/lecture.type';
 export const lectureAPI = createApi({
     baseQuery: baseQueryWithReauth,
     reducerPath: 'lectureAPI',
-    tagTypes: ['Lecture'],
+    tagTypes: [ 'Lecture' ],
     endpoints: (build) => ({
         createLecture: build.mutation<ILecture, FormData>({
             query: (lecture) => ({
-                url: '/lectures',
+                url: '/api/lectures',
                 method: 'POST',
                 body: lecture,
             }),
@@ -28,16 +25,16 @@ export const lectureAPI = createApi({
                             subdivisionType: 'lectures',
                         }),
                     );
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Lecture'],
+            invalidatesTags: [ 'Lecture' ],
         }),
         updateLecture: build.mutation<ILecture, ILecture>({
             query: (lecture) => ({
-                url: `/lectures/${lecture._id}`,
+                url: `/lectures/${ lecture._id }`,
                 method: 'PATCH',
                 body: lecture,
             }),
@@ -45,77 +42,77 @@ export const lectureAPI = createApi({
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Lecture'],
+            invalidatesTags: [ 'Lecture' ],
         }),
         getAllLectures: build.query<ILecture[], void>({
             query: () => ({
-                url: '/lectures',
+                url: '/api/lectures',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Lecture'],
+            providesTags: [ 'Lecture' ],
         }),
         getLecture: build.query<ILecture, string>({
             query: (lectureId) => ({
-                url: `/lectures/${lectureId}`,
+                url: `/lectures/${ lectureId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Lecture'],
+            providesTags: [ 'Lecture' ],
         }),
         deleteLecture: build.mutation<string, string>({
             query: (lectureId) => ({
-                url: `/lectures/${lectureId}`,
+                url: `/lectures/${ lectureId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Lecture'],
+            invalidatesTags: [ 'Lecture' ],
         }),
         readLecture: build.query<string, string>({
             query: (lectureId) => ({
-                url: `/lectures/file/${lectureId}`,
+                url: `/lectures/file/${ lectureId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Lecture'],
+            providesTags: [ 'Lecture' ],
         }),
         editLecture: build.mutation<ILecture, FormData>({
             query: (lectureFile) => ({
-                url: `/lectures/file/${lectureFile.get('lecture_id')}`,
+                url: `/lectures/file/${ lectureFile.get('lecture_id') }`,
                 method: 'PATCH',
                 body: lectureFile,
             }),
@@ -124,12 +121,12 @@ export const lectureAPI = createApi({
                 try {
                     const { data } = await queryFulfilled;
                     dispatch(updateActualSubdivision(data));
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Lecture'],
+            invalidatesTags: [ 'Lecture' ],
         }),
     }),
 });

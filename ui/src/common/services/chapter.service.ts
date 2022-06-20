@@ -15,11 +15,11 @@ import { IChapter, IChapterCreate } from '../types/chapter.type';
 export const chapterAPI = createApi({
     baseQuery: baseQueryWithReauth,
     reducerPath: 'chapterAPI',
-    tagTypes: ['Chapter'],
+    tagTypes: [ 'Chapter' ],
     endpoints: (build) => ({
         createChapter: build.mutation<IChapter, IChapterCreate>({
             query: (chapter) => ({
-                url: '/chapters',
+                url: '/api/chapters',
                 method: 'POST',
                 body: chapter,
             }),
@@ -28,16 +28,16 @@ export const chapterAPI = createApi({
                 try {
                     const { data } = await queryFulfilled;
                     dispatch(appendChapterToList(data));
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Chapter'],
+            invalidatesTags: [ 'Chapter' ],
         }),
         updateChapter: build.mutation<IChapter, IChapter>({
             query: (chapter) => ({
-                url: `/chapters/${chapter._id}`,
+                url: `/chapters/${ chapter._id }`,
                 method: 'PATCH',
                 body: chapter,
             }),
@@ -47,48 +47,48 @@ export const chapterAPI = createApi({
                     const { data } = await queryFulfilled;
                     dispatch(updateChapterInList(data));
                     dispatch(updateActualChapter(data));
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Chapter'],
+            invalidatesTags: [ 'Chapter' ],
         }),
         getAllChapters: build.query<IChapter[], void>({
             query: () => ({
-                url: '/chapters',
+                url: '/api/chapters',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     const { data } = await queryFulfilled;
                     dispatch(setChapterList(data));
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Chapter'],
+            providesTags: [ 'Chapter' ],
         }),
         getChapter: build.query<IChapter, string>({
             query: (chapterId) => ({
-                url: `/chapters/${chapterId}`,
+                url: `/chapters/${ chapterId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     const { data } = await queryFulfilled;
                     dispatch(setActualChapter(data));
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Chapter'],
+            providesTags: [ 'Chapter' ],
         }),
         deleteChapter: build.mutation<string, string>({
             query: (chapterId) => ({
-                url: `/chapters/${chapterId}`,
+                url: `/chapters/${ chapterId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
@@ -97,12 +97,12 @@ export const chapterAPI = createApi({
                     await queryFulfilled;
                     dispatch(removeChapterFromList(args));
                     dispatch(unsetActualChapter());
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Chapter'],
+            invalidatesTags: [ 'Chapter' ],
         }),
     }),
 });

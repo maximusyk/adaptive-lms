@@ -6,11 +6,11 @@ import { IKeyword } from '../types/keyword.type';
 export const keywordAPI = createApi({
     baseQuery: baseQueryWithReauth,
     reducerPath: 'keywordAPI',
-    tagTypes: ['Keyword'],
+    tagTypes: [ 'Keyword' ],
     endpoints: (build) => ({
         createKeyword: build.mutation<IKeyword, IKeyword>({
             query: (keyword) => ({
-                url: '/keywords',
+                url: '/api/keywords',
                 method: 'POST',
                 body: keyword,
             }),
@@ -18,16 +18,16 @@ export const keywordAPI = createApi({
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Keyword'],
+            invalidatesTags: [ 'Keyword' ],
         }),
         updateKeyword: build.mutation<IKeyword, IKeyword>({
             query: (keyword) => ({
-                url: `/keywords/${keyword._id}`,
+                url: `/keywords/${ keyword._id }`,
                 method: 'PATCH',
                 body: keyword,
             }),
@@ -35,58 +35,58 @@ export const keywordAPI = createApi({
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Keyword'],
+            invalidatesTags: [ 'Keyword' ],
         }),
         getAllKeywords: build.query<IKeyword[], void>({
             query: () => ({
-                url: '/keywords',
+                url: '/api/keywords',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Keyword'],
+            providesTags: [ 'Keyword' ],
         }),
         getKeyword: build.query<IKeyword, string>({
             query: (keywordId) => ({
-                url: `/keywords/${keywordId}`,
+                url: `/keywords/${ keywordId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            providesTags: ['Keyword'],
+            providesTags: [ 'Keyword' ],
         }),
         deleteKeyword: build.mutation<string, string>({
             query: (keywordId) => ({
-                url: `/keywords/${keywordId}`,
+                url: `/keywords/${ keywordId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Keyword'],
+            invalidatesTags: [ 'Keyword' ],
         }),
     }),
 });

@@ -11,7 +11,7 @@ export const classAPI = createApi({
     endpoints: (build) => ({
         createClass: build.mutation<IClass, IClass>({
             query: (classData) => ({
-                url: '/classes',
+                url: '/api/classes',
                 method: 'POST',
                 body: classData,
             }),
@@ -45,7 +45,7 @@ export const classAPI = createApi({
         }),
         getAllClasses: build.query<IClass[], void>({
             query: () => ({
-                url: '/classes',
+                url: '/api/classes',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));

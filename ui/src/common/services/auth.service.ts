@@ -8,11 +8,11 @@ import { userAPI } from './user.service';
 export const authAPI = createApi({
     baseQuery: baseQueryWithReauth,
     reducerPath: 'authAPI',
-    tagTypes: ['Auth'],
+    tagTypes: [ 'Auth' ],
     endpoints: (build) => ({
         login: build.mutation<IAuthResponse, IAuthRequest>({
             query: (authRequest) => ({
-                url: '/auth/login',
+                url: '/api/auth/login',
                 method: 'POST',
                 body: authRequest,
             }),
@@ -21,51 +21,51 @@ export const authAPI = createApi({
                 try {
                     const { data } = await queryFulfilled;
                     dispatch(authorizeUser(data));
-                    if (data.user) {
+                    if ( data.user ) {
                         await dispatch(
                             userAPI.endpoints.verify.initiate(data.user),
                         );
                     } else {
                         dispatch(unauthorizeUser());
                     }
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Auth'],
+            invalidatesTags: [ 'Auth' ],
         }),
         logout: build.mutation<void, void>({
             query: () => ({
-                url: '/auth/logout',
+                url: '/api/auth/logout',
                 method: 'POST',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Auth'],
+            invalidatesTags: [ 'Auth' ],
         }),
         refreshToken: build.mutation<IAuthResponse, void>({
             query: () => ({
-                url: '/auth/refresh',
+                url: '/api/auth/refresh',
                 method: 'POST',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
                 try {
                     await queryFulfilled;
-                } catch (error) {
+                } catch ( error ) {
                     console.log(error);
                 }
                 dispatch(setLoaderState(false));
             },
-            invalidatesTags: ['Auth'],
+            invalidatesTags: [ 'Auth' ],
         }),
     }),
 });

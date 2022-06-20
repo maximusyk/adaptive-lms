@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./ui
+    container_name: adaptive-lms-frontend
+    command: pnpm run dev
+    #    command: serve -s dist -l 4053
+    restart: unless-stopped
+    env_file: ./ui/.env
+    networks:
+      - adaptive-lms-net
+
+  api:
+    build: ./api
+    container_name: adaptive-lms-api
+    command: npm run start
+    restart: unless-stopped
+    env_file: ./api/.env
+    depends_on:
+      - api_db
+    networks:
+      - adaptive-lms-net
+
+  api_db:
+    image: mongo:latest
+    container_name: adaptive-lms-api-db
+    restart: unless-stopped
+    volumes:
+      - mongodb_api:/data/db
+    networks:
+      - adaptive-lms-net
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: adaptive-lms-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.prod.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - frontend
+      - api
+    networks:
+      - adaptive-lms-net
+
+volumes:
+  mongodb_api:
+
+networks:
+  adaptive-lms-net:
+    driver: bridge

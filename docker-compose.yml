@@ -4,7 +4,7 @@ services:
   frontend:
     build: ./ui
     container_name: adaptive-lms-frontend
-    command: pnpm run db:seed && pnpm run dev
+    command: pnpm run dev
     #    command: serve -s dist -l 4053
     restart: unless-stopped
     env_file: ./ui/.env
@@ -14,7 +14,7 @@ services:
   api:
     build: ./api
     container_name: adaptive-lms-api
-    command: npm run start
+    command: pnpm run db:seed && pnpm run start
     restart: unless-stopped
     env_file: ./api/.env
     depends_on:

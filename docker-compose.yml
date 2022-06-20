@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     env_file: ./ui/.env
     networks:
-      init- adaptive-lms-net
+      - adaptive-lms-net
 
   api:
     build: ./api

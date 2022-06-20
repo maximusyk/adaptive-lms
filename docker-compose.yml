@@ -14,7 +14,7 @@ services:
   api:
     build: ./api
     container_name: adaptive-lms-api
-    command: pnpm run db:seed && pnpm run start
+    command: pnpm run start
     restart: unless-stopped
     env_file: ./api/.env
     depends_on:

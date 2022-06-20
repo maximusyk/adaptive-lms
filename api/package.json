@@ -8,7 +8,6 @@
     "devDebug": "nodemon --config nodemon.json --inspect-brk ./src/index.ts",
     "lint": "eslint . --config .eslintrc.json",
     "lint:fix": "eslint . --fix --config .eslintrc.json",
-    "db:seed": "node --require ts-node/register --require tsconfig-paths/register ./src/db/seed.db.ts",
     "pre-build": "npm run lint:fix",
     "start": "node -r ./tsconfig-paths-bootstrap.js dist/index.js",
     "build": "tsc --project tsconfig.json"

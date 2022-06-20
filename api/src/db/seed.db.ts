@@ -10,16 +10,16 @@ import { Quiz } from '@quizzes/entities/quiz.entity';
 import { Unit } from '@units/entities/unit.entity';
 import { User } from '@users/entities/user.entity';
 import consola from 'consola';
-import { connection as mongoConnection } from 'mongoose';
-import connectMongo from './connection.db';
+// import { connection as mongoConnection } from 'mongoose';
+// import connectMongo from './connection.db';
 import { seedData } from './seedData';
 
-connectMongo().then(() => {consola.success('Connected to DB\n');}).catch((error: string) => {
-    consola.error(error);
-    process.exit(1);
-});
+// connectMongo().then(() => {consola.success('Connected to DB\n');}).catch((error: string) => {
+//     consola.error(error);
+//     process.exit(1);
+// });
 
-const seedDB = async () => {
+export const seedDB = async () => {
     const dbModels = [
         Chapter,
         QuizType,
@@ -49,8 +49,4 @@ const seedDB = async () => {
     }
 };
 
-seedDB().then(() => {
-    mongoConnection.close();
-    consola.success('DB seeded. Closing connection');
-    process.exit(0);
-});
+

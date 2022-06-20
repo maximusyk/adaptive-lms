@@ -27,7 +27,7 @@ export const keywordAPI = createApi({
         }),
         updateKeyword: build.mutation<IKeyword, IKeyword>({
             query: (keyword) => ({
-                url: `/keywords/${ keyword._id }`,
+                url: `/api/keywords/${ keyword._id }`,
                 method: 'PATCH',
                 body: keyword,
             }),
@@ -59,7 +59,7 @@ export const keywordAPI = createApi({
         }),
         getKeyword: build.query<IKeyword, string>({
             query: (keywordId) => ({
-                url: `/keywords/${ keywordId }`,
+                url: `/api/keywords/${ keywordId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -74,7 +74,7 @@ export const keywordAPI = createApi({
         }),
         deleteKeyword: build.mutation<string, string>({
             query: (keywordId) => ({
-                url: `/keywords/${ keywordId }`,
+                url: `/api/keywords/${ keywordId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

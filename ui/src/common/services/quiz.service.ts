@@ -35,7 +35,7 @@ export const quizAPI = createApi({
         }),
         updateQuiz: build.mutation<IQuiz, IQuiz>({
             query: (quiz) => ({
-                url: `/quizzes/${ quiz._id }`,
+                url: `/api/quizzes/${ quiz._id }`,
                 method: 'PATCH',
                 body: quiz,
             }),
@@ -52,7 +52,7 @@ export const quizAPI = createApi({
         }),
         updateQuestion: build.mutation<IQuizQuestion, IQuizQuestion>({
             query: (quizQuestion) => ({
-                url: `/quizzes/question/${ quizQuestion._id }`,
+                url: `/api/quizzes/question/${ quizQuestion._id }`,
                 method: 'PATCH',
                 body: quizQuestion,
             }),
@@ -70,7 +70,7 @@ export const quizAPI = createApi({
         }),
         checkQuizResult: build.mutation<number, IQuizResultsRequest>({
             query: (quizResultsRequest) => ({
-                url: `/quizzes/result/${ quizResultsRequest.quizId }`,
+                url: `/api/quizzes/result/${ quizResultsRequest.quizId }`,
                 method: 'POST',
                 body: quizResultsRequest.answers,
             }),
@@ -89,7 +89,7 @@ export const quizAPI = createApi({
         updateQuestionAnswers: build.mutation<IQuizQuestion,
             IQuizAnswerRequest>({
             query: (quizAnswers) => ({
-                url: `/quizzes/answers/${ quizAnswers.answers[0].question }`,
+                url: `/api/quizzes/answers/${ quizAnswers.answers[0].question }`,
                 method: 'PATCH',
                 body: quizAnswers,
             }),
@@ -121,7 +121,7 @@ export const quizAPI = createApi({
         }),
         getQuiz: build.query<IQuiz, string>({
             query: (quizId) => ({
-                url: `/quizzes/${ quizId }`,
+                url: `/api/quizzes/${ quizId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -136,7 +136,7 @@ export const quizAPI = createApi({
         }),
         getStudentQuestions: build.query<IQuizQuestion[], string>({
             query: (quizId) => ({
-                url: `/quizzes/question/${ quizId }`,
+                url: `/api/quizzes/question/${ quizId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -152,7 +152,7 @@ export const quizAPI = createApi({
         }),
         deleteQuiz: build.mutation<string, string>({
             query: (quizId) => ({
-                url: `/quizzes/${ quizId }`,
+                url: `/api/quizzes/${ quizId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

@@ -11,7 +11,7 @@ export const userAPI = createApi({
     endpoints: (build) => ({
         verify: build.query<IUser, string>({
             query: (userId) => ({
-                url: `/users/${ userId }`,
+                url: `/api/users/${ userId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -43,7 +43,7 @@ export const userAPI = createApi({
         }),
         updateUser: build.mutation<IUser, IUser>({
             query: (user) => ({
-                url: `/users/${ user._id }`,
+                url: `/api/users/${ user._id }`,
                 method: 'PATCH',
                 body: user,
             }),
@@ -76,7 +76,7 @@ export const userAPI = createApi({
         }),
         getUser: build.query<IUser, string>({
             query: (userId) => ({
-                url: `/users/${ userId }`,
+                url: `/api/users/${ userId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -91,7 +91,7 @@ export const userAPI = createApi({
         }),
         deleteUser: build.mutation<string, string>({
             query: (userId) => ({
-                url: `/users/${ userId }`,
+                url: `/api/users/${ userId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

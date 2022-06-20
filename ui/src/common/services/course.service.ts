@@ -37,7 +37,7 @@ export const courseAPI = createApi({
         }),
         updateCourse: build.mutation<ICourse, ICourse>({
             query: (course) => ({
-                url: `/courses/${ course._id }`,
+                url: `/api/courses/${ course._id }`,
                 method: 'PATCH',
                 body: course,
             }),
@@ -72,7 +72,7 @@ export const courseAPI = createApi({
         }),
         getCourse: build.query<ICourse, string>({
             query: (courseId) => ({
-                url: `/courses/${ courseId }`,
+                url: `/api/courses/${ courseId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -89,7 +89,7 @@ export const courseAPI = createApi({
         }),
         deleteCourse: build.mutation<string, string>({
             query: (courseId) => ({
-                url: `/courses/${ courseId }`,
+                url: `/api/courses/${ courseId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

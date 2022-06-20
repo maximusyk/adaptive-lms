@@ -28,7 +28,7 @@ export const classAPI = createApi({
         }),
         updateClass: build.mutation<IClass, IClass>({
             query: (classData) => ({
-                url: `/classes/${ classData._id }`,
+                url: `/api/classes/${ classData._id }`,
                 method: 'PATCH',
                 body: classData,
             }),
@@ -61,7 +61,7 @@ export const classAPI = createApi({
         }),
         getClass: build.query<IClass, string>({
             query: (classId) => ({
-                url: `/classes/${ classId }`,
+                url: `/api/classes/${ classId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -76,7 +76,7 @@ export const classAPI = createApi({
         }),
         deleteClass: build.mutation<string, string>({
             query: (classId) => ({
-                url: `/classes/${ classId }`,
+                url: `/api/classes/${ classId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

@@ -34,7 +34,7 @@ export const lectureAPI = createApi({
         }),
         updateLecture: build.mutation<ILecture, ILecture>({
             query: (lecture) => ({
-                url: `/lectures/${ lecture._id }`,
+                url: `/api/lectures/${ lecture._id }`,
                 method: 'PATCH',
                 body: lecture,
             }),
@@ -66,7 +66,7 @@ export const lectureAPI = createApi({
         }),
         getLecture: build.query<ILecture, string>({
             query: (lectureId) => ({
-                url: `/lectures/${ lectureId }`,
+                url: `/api/lectures/${ lectureId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -81,7 +81,7 @@ export const lectureAPI = createApi({
         }),
         deleteLecture: build.mutation<string, string>({
             query: (lectureId) => ({
-                url: `/lectures/${ lectureId }`,
+                url: `/api/lectures/${ lectureId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
@@ -97,7 +97,7 @@ export const lectureAPI = createApi({
         }),
         readLecture: build.query<string, string>({
             query: (lectureId) => ({
-                url: `/lectures/file/${ lectureId }`,
+                url: `/api/lectures/file/${ lectureId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -112,7 +112,7 @@ export const lectureAPI = createApi({
         }),
         editLecture: build.mutation<ILecture, FormData>({
             query: (lectureFile) => ({
-                url: `/lectures/file/${ lectureFile.get('lecture_id') }`,
+                url: `/api/lectures/file/${ lectureFile.get('lecture_id') }`,
                 method: 'PATCH',
                 body: lectureFile,
             }),

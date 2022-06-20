@@ -37,7 +37,7 @@ export const chapterAPI = createApi({
         }),
         updateChapter: build.mutation<IChapter, IChapter>({
             query: (chapter) => ({
-                url: `/chapters/${ chapter._id }`,
+                url: `/api/chapters/${ chapter._id }`,
                 method: 'PATCH',
                 body: chapter,
             }),
@@ -72,7 +72,7 @@ export const chapterAPI = createApi({
         }),
         getChapter: build.query<IChapter, string>({
             query: (chapterId) => ({
-                url: `/chapters/${ chapterId }`,
+                url: `/api/chapters/${ chapterId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -88,7 +88,7 @@ export const chapterAPI = createApi({
         }),
         deleteChapter: build.mutation<string, string>({
             query: (chapterId) => ({
-                url: `/chapters/${ chapterId }`,
+                url: `/api/chapters/${ chapterId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

@@ -28,7 +28,7 @@ export const unitAPI = createApi({
         }),
         updateUnit: build.mutation<IUnit, IUnit>({
             query: (unit) => ({
-                url: `/units/${ unit._id }`,
+                url: `/api/units/${ unit._id }`,
                 method: 'PATCH',
                 body: unit,
             }),
@@ -60,7 +60,7 @@ export const unitAPI = createApi({
         }),
         getUnit: build.query<IUnit, string>({
             query: (unitId) => ({
-                url: `/units/${ unitId }`,
+                url: `/api/units/${ unitId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -75,7 +75,7 @@ export const unitAPI = createApi({
         }),
         getUnitsByLecture: build.query<IUnit[], string>({
             query: (lectureId) => ({
-                url: `/units/lecture/${ lectureId }`,
+                url: `/api/units/lecture/${ lectureId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -91,7 +91,7 @@ export const unitAPI = createApi({
         }),
         getUnitsByChapter: build.query<IUnit[], string>({
             query: (chapterId) => ({
-                url: `/units/chapter/${ chapterId }`,
+                url: `/api/units/chapter/${ chapterId }`,
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {
                 dispatch(setLoaderState(true));
@@ -107,7 +107,7 @@ export const unitAPI = createApi({
         }),
         deleteUnit: build.mutation<string, string>({
             query: (unitId) => ({
-                url: `/units/${ unitId }`,
+                url: `/api/units/${ unitId }`,
                 method: 'DELETE',
             }),
             async onQueryStarted(args, { dispatch, queryFulfilled }) {

@@ -40,10 +40,10 @@ app.use('/api/units', unitRoutes);
 app.use('/api/keywords', keywordRoutes);
 app.use('/api/quizzes', quizRoutes);
 
-app.use('/display', (req, res, next) => {
+app.use('/display', (req, res) => {
     displayRoutes(app);
 
-    next();
+    res.status(200);
 });
 
 app.use(errorMiddleware);

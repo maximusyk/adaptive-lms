@@ -30,17 +30,17 @@ app.use(
     }),
 );
 
-app.use('/api/auth', authRoutes);
-app.use('/api/courses', coursesRoutes);
-app.use('/api/users', usersRoutes);
-app.use('/api/classes', classesRoutes);
-app.use('/api/chapters', chapterRoutes);
-app.use('/api/lectures', lectureRoutes);
-app.use('/api/units', unitRoutes);
-app.use('/api/keywords', keywordRoutes);
-app.use('/api/quizzes', quizRoutes);
+app.use('/auth', authRoutes);
+app.use('/courses', coursesRoutes);
+app.use('/users', usersRoutes);
+app.use('/classes', classesRoutes);
+app.use('/chapters', chapterRoutes);
+app.use('/lectures', lectureRoutes);
+app.use('/units', unitRoutes);
+app.use('/keywords', keywordRoutes);
+app.use('/quizzes', quizRoutes);
 
-app.use('/api/display', (req, res) => {
+app.use('/display', (req, res) => {
     displayRoutes(app);
 
     res.status(200);

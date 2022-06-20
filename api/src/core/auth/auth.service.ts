@@ -9,10 +9,13 @@ class AuthService {
         const user = (await User.findOne({ username }).exec()) as IUser;
         if ( !user ) throw ApiError.BadRequest('User not found');
 
+        console.log(user);
+
         const isPasswordValid = bcrypt.compareSync(
             password,
             user.password as string,
         );
+        console.log('isPasswordValid', isPasswordValid);
         if ( !isPasswordValid ) throw ApiError.BadRequest('Wrong password');
 
         const tokens = tokenService.generateTokens({
@@ -22,6 +25,9 @@ class AuthService {
         });
 
         await tokenService.saveToken(user._id, tokens.refreshToken);
+
+        console.log('Response login');
+        console.log({ ...tokens, user: user._id });
 
         return { ...tokens, user: user._id };
     }
